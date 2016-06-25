@@ -1,0 +1,17 @@
+
+extends layout
+
+block content
+
+	div.container
+		h3 continues integration & continues deployment
+		form#searchform
+			label github repository:
+			input#repo(type="text" required="required" value="")
+
+			label command:
+			input#cmd(type="text" required="required" value="")
+
+			button.btn.btn-primary#deploy(type="submit") deploy		
+				
+	script(src="javascript/main.js")
