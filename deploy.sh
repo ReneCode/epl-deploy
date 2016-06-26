@@ -24,7 +24,10 @@ then
 	echo "create $TMPDIR"
 	mkdir $TMPDIR
 fi
-cd $TMPDIR
+#cd $TMPDIR
+
+# goto root folder
+cd ~
 
 
 # clone or pull the git-repo
