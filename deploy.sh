@@ -12,11 +12,8 @@ GITREPOURL=$1
 # $2 is the deploy command. it is "npm deploy" if not set
 DEPLOYCMD=${2:-"npm run deploy"}
 
-
-
 # get the last part of the url => that is the folder
-IFS='/' read -a arr <<< "$GITREPOURL"
-GITREPO=${arr[ ${#arr[@]} -1]}
+GITREPO=${GITREPOURL//*\//}
 # remove ".git" at the end
 GITREPO=${GITREPO//\.*/}
 
