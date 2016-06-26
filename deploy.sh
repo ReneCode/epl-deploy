@@ -17,6 +17,9 @@ DEPLOYCMD=${2:-"npm run deploy"}
 # get the last part of the url => that is the folder
 IFS='/' read -a arr <<< "$GITREPOURL"
 GITREPO=${arr[ ${#arr[@]} -1]}
+# remove ".git" at the end
+GITREPO=${GITREPO//\.*/}
+
 
 # create tmp-folder
 if [ ! -d $TMPDIR ]
@@ -25,6 +28,7 @@ then
 	mkdir $TMPDIR
 fi
 cd $TMPDIR
+
 
 # clone or pull the git-repo
 if [ ! -d $GITREPO ]

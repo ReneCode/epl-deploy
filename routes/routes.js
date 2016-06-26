@@ -15,6 +15,7 @@ function deploy(req, res) {
     var cwd = shelljs.pwd() + "/";
     var script = cwd + 'deploy.sh' + " " + repo + " " + cmd;
 
+    console.log("*** " + script);
     var options = {
         cwd: cwd
     };

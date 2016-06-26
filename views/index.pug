@@ -4,14 +4,25 @@ extends layout
 block content
 
 	div.container
-		h3 continues integration & continues deployment
-		form#searchform
-			label github repository:
-			input#repo(type="text" required="required" value="")
+		h3 EPL deploy
+		p continues integration & continues deployment
+		div.row
+			div.col-sm-6
+				form(role="form")
+					div.form-group
+						label(for="repo") github repository:
+						input#repo.form-control(type="text" required="required" value="https://github.com/ReneCode/epl-translate.git")
 
-			label command:
-			input#cmd(type="text" required="required" value="")
+					div.form-group
+						label(for="cmd") command:
+						input#cmd.form-control(type="text" required="required" placeholder="npm run deploy" value="")
 
-			button.btn.btn-primary#deploy(type="submit") deploy		
-				
+					button.btn.btn-primary#deploy(type="submit") deploy		
+
+			div.col-sm-6
+				div stdout
+				div#stdout.status
+				div stderr
+				div#stderr.status
+
 	script(src="javascript/main.js")
