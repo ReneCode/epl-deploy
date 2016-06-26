@@ -12,8 +12,9 @@ function showHomePage(req, res) {
 function deploy(req, res) {
     var repo = req.body.repo;
     var cmd = req.body.cmd;
+
     var cwd = shelljs.pwd() + "/";
-    var script = cwd + 'deploy.sh' + " " + repo + " " + cmd;
+    var script = cwd + 'run_deploy.sh' + " " + repo + " " + cmd;
 
     // has to run in bash !!
     // because auf subsitution ${...} inside deploy.sh
