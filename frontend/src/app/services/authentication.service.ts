@@ -27,12 +27,12 @@ export class AuthenticationService {
         localStorage.setItem('profile', JSON.stringify(profile));
         localStorage.setItem('token', authResult.idToken);
 
-        console.log(
-          this.jwtHelper.decodeToken(authResult.idToken),
-          this.jwtHelper.getTokenExpirationDate(authResult.idToken),
-          this.jwtHelper.isTokenExpired(authResult.idToken),
-          profile
-        );
+        // console.log(
+        //   this.jwtHelper.decodeToken(authResult.idToken),
+        //   this.jwtHelper.getTokenExpirationDate(authResult.idToken),
+        //   this.jwtHelper.isTokenExpired(authResult.idToken),
+        //   profile
+        // );
       })
     });
   }

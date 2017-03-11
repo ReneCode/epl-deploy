@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
+import { AuthModule } from './auth.module';
+
 import { AuthenticationService } from './services/authentication.service';
 
 import { AppComponent } from './components/app/app.component';
@@ -24,7 +26,7 @@ import { DeliveryListService } from './services/delivery-list.service';
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-
+    AuthModule
   ],
   providers: [
     DeliveryListService,
