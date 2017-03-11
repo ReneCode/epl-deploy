@@ -1,8 +1,8 @@
 {
   "name": "epl-deploy",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "tiny ci cd for git-hub projects",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"

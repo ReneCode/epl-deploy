@@ -12,12 +12,14 @@ function showHomePage(req, res) {
 function deploy(req, res) {
     var repo = req.body.repo;
     var cmd = req.body.cmd;
+
     var cwd = shelljs.pwd() + "/";
-    var script = cwd + 'deploy.sh' + " " + repo + " " + cmd;
+    var script = cwd + 'run_deploy.sh' + " " + repo + " " + cmd;
 
     // has to run in bash !!
     // because auf subsitution ${...} inside deploy.sh
     // http://stackoverflow.com/questions/20323738/echo-syntax-error-bad-substitution
+    // https://github.com/shelljs/shelljs
     var options = {
         cwd: cwd,
         shell: '/bin/bash'
@@ -28,16 +30,6 @@ function deploy(req, res) {
             stdout:stdout,
             stderr:stderr});
     });
-/*
-    var deploySh = spawn(
-            script, 
-            [ repo, cmd ],
-            {
-                cwd: cwd
-            } 
-        );
-        */    
-
 }
 
 
@@ -46,4 +38,5 @@ module.exports = function(app) {
 
     app.post('/deploy', deploy); 
     
-}
+};
+
