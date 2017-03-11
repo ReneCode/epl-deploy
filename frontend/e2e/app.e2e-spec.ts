@@ -1,4 +1,5 @@
 import { FrontendPage } from './app.po';
+import { Auth0 } from './auth0-login.po';
 import { browser } from 'protractor';
 
 describe('frontend App', function() {
@@ -8,9 +9,9 @@ describe('frontend App', function() {
     page = new FrontendPage();
   });
 
-  it('should display message saying Topic', () => {
+  it('should display message saying Cloud Solutions', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Topic');
+    expect(page.getMenuHeaderText()).toEqual('Cloud Solutions - delivery');
   });
 
   it('should display login button', () => {
@@ -26,12 +27,10 @@ describe('frontend App', function() {
     loginButton.click();
     browser.ignoreSynchronization = true;
     browser.driver.sleep(1000);
-    expect(page.authGetLoginDialogHeader()).toEqual('Auth0');
-    page.authEnterLoginEmail('demo@eplan.de');
-    page.authEnterLoginPassword('Hallo123');
-    let authButton = page.authGetLoginButton();
-    expect(authButton.getText()).toEqual('LOG IN');
-    page.authGetLoginButton().click();
+
+    let auth0Login = new Auth0();
+    auth0Login.login('demo@eplan.de', 'Hallo123');
+
     browser.driver.sleep(1000);
     browser.ignoreSynchronization = false;
   });
@@ -42,5 +41,6 @@ describe('frontend App', function() {
     expect(logoutButton.getText()).toEqual('Logout');    
   })
 
+  
 
 });

@@ -28,11 +28,5 @@ exports.config = {
   },
   onPrepare: function() {
     jasmine.getEnv().addReporter(new SpecReporter());
-
-    // global.isAngularSite = function(flag) {
-    //   console.log('Switching to ' + (flag ? 'Asynchronous' : 'Synchronous') + ' mode.')
-    //   browser.ignoreSynchronization = !flag;
-    // };
-    // global.BROWSER_WAIT = 5000;
   }
 };

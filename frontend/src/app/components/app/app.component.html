@@ -1,18 +1,14 @@
-<md-menu>
-  <button md-menu-item>Settings</button>
-</md-menu>
 
 <md-toolbar color="primary">
-  <span>{{title}}</span>
-  <button id="login" md-menu-item *ngIf="!loggedIn()" (click)="login()">
+  <span id="menu-header">{{title}}</span>
+  <span class="spacer"></span>
+  <button md-button id="login" *ngIf="!loggedIn()" (click)="login()">
     <span>Login</span>
   </button>
-  <button id="logout" md-menu-item *ngIf="loggedIn()" (click)="logout()">
+  <button md-button id="logout" *ngIf="loggedIn()" (click)="logout()">
     <span>Logout</span>
   </button>
 </md-toolbar>
-
-<h1>Topic</h1>
 
 <app-delivery-list>
 </app-delivery-list>

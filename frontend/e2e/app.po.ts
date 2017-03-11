@@ -5,8 +5,8 @@ export class FrontendPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getMenuHeaderText() {
+    return element(by.css('#menu-header')).getText();
   }
 
   getLoginButton() {
@@ -17,19 +17,4 @@ export class FrontendPage {
     return element(by.css('#logout'));
   }
 
-  authGetLoginDialogHeader() {
-    return element(by.css('.auth0-lock-header-welcome .auth0-lock-name')).getText();
-  }
-  
-  authEnterLoginEmail(email) {
-    var ele = element(by.css('input[type=email]'));
-    ele.sendKeys(email);
-  }
-  authEnterLoginPassword(password) {
-    var ele = element(by.css('input[type=password]'));
-    ele.sendKeys(password);
-  }
-  authGetLoginButton() {
-    return element(by.css('.auth0-lock-submit'));
-  }
 }
