@@ -39,6 +39,7 @@ describe('frontend App', function() {
     let logoutButton = page.getLogoutButton();
     expect(logoutButton != null).toBe(true);
     expect(logoutButton.getText()).toEqual('Logout');    
+    expect(page.getUsername()).toEqual('demo');    
   })
 
   

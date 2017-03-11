@@ -5,10 +5,13 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
+import { AuthenticationService } from './services/authentication.service';
+
 import { AppComponent } from './components/app/app.component';
 import { DeliveryRowComponent } from './components/delivery-row/delivery-row.component';
 import { DeliveryListComponent } from './components/delivery-list/delivery-list.component';
 import { DeliveryListService } from './services/delivery-list.service';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { DeliveryListService } from './services/delivery-list.service';
 
   ],
   providers: [
-    DeliveryListService
+    DeliveryListService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

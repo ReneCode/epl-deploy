@@ -17,4 +17,8 @@ export class FrontendPage {
     return element(by.css('#logout'));
   }
 
+  getUsername() {
+    return element(by.css('#username')).getText();
+  }
+
 }

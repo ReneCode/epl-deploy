@@ -2,6 +2,9 @@
 <md-toolbar color="primary">
   <span id="menu-header">{{title}}</span>
   <span class="spacer"></span>
+  <span *ngIf="user" id="username">{{user.name}}</span>
+  <span>&nbsp;</span>
+  <img *ngIf="user" src={{user.avatar}} alt="User Gravatar" width="44" height="44">
   <button md-button id="login" *ngIf="!loggedIn()" (click)="login()">
     <span>Login</span>
   </button>
