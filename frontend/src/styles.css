@@ -6,3 +6,11 @@
 .spacer {
 	flex: 1 1 auto;
 }
+
+
+.avatar {
+	border-radius: 100px;
+	margin: 4px;
+	width: 38px;
+	height: 38px;
+}

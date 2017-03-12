@@ -17,6 +17,7 @@ var jwtCheck = jwt({
 app.use('/', jwtCheck);
 
 app.use('/', (req, res) => {
+	console.log(req.user);
 	res.json("hallo hier ist der Server");
 });
 
