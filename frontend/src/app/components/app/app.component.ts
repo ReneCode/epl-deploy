@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from '../../services/authentication.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ export class AppComponent {
   title = 'Cloud Solutions - delivery';
   idToken: string;
 
-  constructor(private authService: AuthenticationService) {
+  constructor(private authService: AuthService,
+              private router: Router) {
   }
 
   private login() {
@@ -19,10 +21,11 @@ export class AppComponent {
 
   private logout() {
     this.authService.logout();
+    this.router.navigate(['/']).then( () => {} );
   }
 
   private loggedIn(): boolean {
-    return this.authService.loggedIn;
+    return this.authService.loggedIn();
   }
 
   private get name(): string {

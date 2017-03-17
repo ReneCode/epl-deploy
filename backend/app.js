@@ -3,14 +3,14 @@ var express = require('express');
 var cors = require('cors');
 var jwt = require('express-jwt');
 
-const auth0Settings = require('./auth0-credentials.json');
+var authCredentials = require('./auth-credentials.json');
 
 var app = express();
 app.use(cors())
 
 var jwtCheck = jwt({
-	secret: new Buffer(auth0Settings.secret),
-	audience: auth0Settings.audience
+	secret: new Buffer(authCredentials.secret),
+	audience: authCredentials.audience
 });
 
 // middleware - check auth token
